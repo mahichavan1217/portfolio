@@ -1,11 +1,39 @@
-<div align="center">
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+# Jay Kuwar - Engineering Portfolio
 
-  <h1>Built with AI Studio</h2>
+A high-end, animated mechanical engineering portfolio featuring AI-powered assistant and detailed simulation case studies.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## 🚀 Deployment Instructions
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+### 1. GitHub Setup
+- Create a new repository on GitHub.
+- Push your files:
+  ```bash
+  git init
+  git add .
+  git commit -m "Deploy portfolio"
+  git branch -M main
+  git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
+  git push -u origin main
+  ```
 
-</div>
+### 2. Vercel / Netlify Deployment
+- Connect your GitHub repository.
+- Set the **Environment Variable**: `API_KEY` with your Gemini API Key.
+- Deploy!
+
+## 🛠 Tech Stack
+- **Framework**: React 19 + TypeScript
+- **Styling**: Tailwind CSS
+- **Animations**: GSAP (GreenSock)
+- **AI**: Google Gemini API (gemini-3-flash-preview)
+- **Design**: Modern Dark Engineering Theme
+
+## 📁 Project Structure
+- `/components`: UI Sections (Hero, Projects, Skills, etc.)
+- `/constants`: Project data and technical stats
+- `App.tsx`: Main layout controller
+- `SimulationBackground.tsx`: Custom particle-based mesh simulation background
+
+---
+Developed by Jay Kuwar. Precision Engineering Portfolio.
