@@ -1,39 +1,36 @@
 
-# Jay Kuwar - Engineering Portfolio
+# Jay Kuwar - Mechanical Engineering Portfolio
 
-A high-end, animated mechanical engineering portfolio featuring AI-powered assistant and detailed simulation case studies.
+Professional portfolio showcasing Expertise in ANSYS (FEA/CFD) and CAD Design.
 
-## 🚀 Deployment Instructions
+## 🚀 Website Live Kaise Karein? (Hosting Guide)
 
-### 1. GitHub Setup
-- Create a new repository on GitHub.
-- Push your files:
-  ```bash
-  git init
-  git add .
-  git commit -m "Deploy portfolio"
-  git branch -M main
-  git remote add origin https://github.com/YOUR_USERNAME/YOUR_REPO.git
-  git push -u origin main
-  ```
+### Option 1: Vercel (Sabse Best)
+Vercel par host karne se aapka AI Assistant sahi se kaam karega kyunki wahan API Key safe rehti hai.
+1. GitHub par ye saari files upload karein.
+2. [Vercel](https://vercel.com/) par jayein aur apna GitHub account link karein.
+3. Apni repository choose karein.
+4. **Environment Variables** tab mein:
+   - Name: `API_KEY`
+   - Value: `AIzaSyDdTXNEjRX3Moi98l-XWIELSq26mfniehI`
+5. **Deploy** button dabayein. 
 
-### 2. Vercel / Netlify Deployment
-- Connect your GitHub repository.
-- Set the **Environment Variable**: `API_KEY` with your Gemini API Key.
-- Deploy!
+### Option 2: GitHub Pages
+1. GitHub Repo ki **Settings** > **Pages** mein jayein.
+2. Source ko `main branch` select karke Save karein.
+3. *Note:* Isme AI Assistant ke liye API key expose ho sakti hai, isliye Vercel behtar hai.
 
-## 🛠 Tech Stack
-- **Framework**: React 19 + TypeScript
-- **Styling**: Tailwind CSS
-- **Animations**: GSAP (GreenSock)
-- **AI**: Google Gemini API (gemini-3-flash-preview)
-- **Design**: Modern Dark Engineering Theme
+## 🛠 Local Run (Apne Computer par chalana)
+1. VS Code mein ye folder open karein.
+2. **Live Server** extension install karein.
+3. `index.html` par Right Click karke **"Open with Live Server"** karein.
 
-## 📁 Project Structure
-- `/components`: UI Sections (Hero, Projects, Skills, etc.)
-- `/constants`: Project data and technical stats
-- `App.tsx`: Main layout controller
-- `SimulationBackground.tsx`: Custom particle-based mesh simulation background
+## 📁 Tech Stack
+- React 19 (via ESM.sh)
+- Tailwind CSS (Styling)
+- GSAP (Animations)
+- Google Gemini API (AI Assistant)
+- FontAwesome (Icons)
 
 ---
 Developed by Jay Kuwar. Precision Engineering Portfolio.
