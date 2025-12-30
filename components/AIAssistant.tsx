@@ -28,9 +28,8 @@ const AIAssistant: React.FC = () => {
     setIsLoading(true);
 
     try {
-      // Use process.env.API_KEY with type casting for TypeScript
-      const apiKey = (process.env as any).API_KEY || '';
-      const ai = new GoogleGenAI({ apiKey });
+      // Accessing API_KEY directly as required by system instructions
+      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMessage,
