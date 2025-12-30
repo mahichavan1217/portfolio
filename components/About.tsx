@@ -1,13 +1,10 @@
 import React, { useState } from 'react';
 
 const About: React.FC = () => {
-  const [hasError, setHasError] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 
-  // Local path for your photo
-  const localImage = '/jay_portrait.jpg';
-  // Original professional fallback
-  const fallbackImage = 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&q=80&w=800';
+  // Path to your local photo
+  const portraitImagePath = '/jay_portrait.jpg';
 
   return (
     <section id="about" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -19,11 +16,14 @@ const About: React.FC = () => {
           {/* Main Portrait Container */}
           <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-[#0f1115]">
             <img 
-              src={hasError ? fallbackImage : localImage} 
+              src={portraitImagePath} 
               alt="Jay Kuwar Portrait" 
               className={`w-full h-full object-cover transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'} grayscale brightness-75 hover:grayscale-0 hover:brightness-100`}
               onLoad={() => setIsLoaded(true)}
-              onError={() => setHasError(true)}
+              onError={(e) => {
+                // If local image fails, show a professional placeholder instead of a broken icon
+                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800";
+              }}
             />
             
             {/* Loading Spinner */}
