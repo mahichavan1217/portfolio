@@ -2,9 +2,13 @@ import React, { useState } from 'react';
 
 const About: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [hasError, setHasError] = useState(false);
 
-  // Path to your local photo
+  // Aapki local file ka path
   const portraitImagePath = '/jay_portrait.jpg';
+  
+  // Agar local file nahi milti toh ye professional fallback image dikhegi
+  const fallbackPath = 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800';
 
   return (
     <section id="about" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
@@ -16,13 +20,15 @@ const About: React.FC = () => {
           {/* Main Portrait Container */}
           <div className="relative aspect-square overflow-hidden rounded-2xl border border-white/10 shadow-2xl bg-[#0f1115]">
             <img 
-              src={portraitImagePath} 
+              src={hasError ? fallbackPath : portraitImagePath} 
               alt="Jay Kuwar Portrait" 
-              className={`w-full h-full object-cover transition-all duration-700 ${isLoaded ? 'opacity-100' : 'opacity-0'} grayscale brightness-75 hover:grayscale-0 hover:brightness-100`}
+              className={`w-full h-full object-cover transition-all duration-700 ${
+                isLoaded ? 'opacity-100' : 'opacity-0'
+              } grayscale brightness-75 hover:grayscale-0 hover:brightness-100`}
               onLoad={() => setIsLoaded(true)}
-              onError={(e) => {
-                // If local image fails, show a professional placeholder instead of a broken icon
-                (e.target as HTMLImageElement).src = "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&q=80&w=800";
+              onError={() => {
+                setHasError(true);
+                setIsLoaded(true);
               }}
             />
             
@@ -33,7 +39,7 @@ const About: React.FC = () => {
               </div>
             )}
 
-            {/* Pattern Overlay */}
+            {/* Carbon Fiber Pattern Overlay */}
             <div className="absolute inset-0 pointer-events-none opacity-20 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')]"></div>
           </div>
           
@@ -45,51 +51,75 @@ const About: React.FC = () => {
               </div>
               <div>
                 <div className="text-xl font-bold text-white">CGPA: 8.07</div>
-                <div className="text-xs text-slate-400 font-mono">B.E. Mechanical Eng.</div>
+                <div className="text-xs text-slate-400 font-mono">
+                  B.E. Mechanical Eng.
+                </div>
               </div>
             </div>
           </div>
         </div>
 
+        {/* RIGHT CONTENT */}
         <div className="space-y-6">
-          <h2 className="text-xs font-mono text-blue-400 uppercase tracking-[0.3em]">Biography</h2>
+          <h2 className="text-xs font-mono text-blue-400 uppercase tracking-[0.3em]">
+            Biography
+          </h2>
+
           <h3 className="text-4xl md:text-5xl font-black leading-tight text-white">
-            Solving Problems with <span className="text-blue-500">Physics & Math</span>.
+            Solving Problems with{' '}
+            <span className="text-blue-500">Physics & Math</span>.
           </h3>
           
           <p className="text-lg text-slate-300 font-light leading-relaxed">
-            I am a Mechanical Engineer currently pursuing my Bachelor of Engineering from Pune Vidyarthi Griha's College of Engineering and Shrikrushna S. Dhamankar Institute of Management, Nashik.
+            I am a Mechanical Engineer currently pursuing my Bachelor of
+            Engineering from Pune Vidyarthi Griha's College of Engineering and
+            Shrikrushna S. Dhamankar Institute of Management, Nashik.
           </p>
           
           <p className="text-slate-400 leading-relaxed font-light">
-            With hands-on experience in CAD and simulation tools such as PTC Creo, SolidWorks, and ANSYS, I focus on delivering efficient engineering solutions. My passion lies in precision design, teamwork, and computational validation of mechanical systems.
+            With hands-on experience in CAD and simulation tools such as PTC
+            Creo, SolidWorks, and ANSYS, I focus on delivering efficient
+            engineering solutions. My passion lies in precision design,
+            teamwork, and computational validation of mechanical systems.
           </p>
           
           <div className="space-y-4 pt-4">
             <div className="flex items-start gap-4 group">
-                <div className="mt-1 w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-xl flex-shrink-0 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                    <i className="fa-solid fa-graduation-cap"></i>
-                </div>
-                <div>
-                    <h4 className="font-bold text-slate-200">Pune Vidyarthi Griha's COE, Nashik</h4>
-                    <p className="text-sm text-slate-400">Mechanical Engineering | 2022 - 2026 (Exp.)</p>
-                </div>
+              <div className="mt-1 w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-xl flex-shrink-0 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <i className="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-200">
+                  Pune Vidyarthi Griha's COE, Nashik
+                </h4>
+                <p className="text-sm text-slate-400">
+                  Mechanical Engineering | 2022 - 2026 (Exp.)
+                </p>
+              </div>
             </div>
             
             <div className="flex items-start gap-4 group">
-                <div className="mt-1 w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-xl flex-shrink-0 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                    <i className="fa-solid fa-briefcase"></i>
-                </div>
-                <div>
-                    <h4 className="font-bold text-slate-200">Professional Internships</h4>
-                    <p className="text-sm text-slate-400">Access CADD | ARK Infosolutions | CAD CAM GURU</p>
-                </div>
+              <div className="mt-1 w-10 h-10 bg-blue-500/10 border border-blue-500/20 rounded-xl flex-shrink-0 flex items-center justify-center text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
+                <i className="fa-solid fa-briefcase"></i>
+              </div>
+              <div>
+                <h4 className="font-bold text-slate-200">
+                  Professional Internships
+                </h4>
+                <p className="text-sm text-slate-400">
+                  Access CADD | ARK Infosolutions | CAD CAM GURU
+                </p>
+              </div>
             </div>
           </div>
           
           <div className="pt-6">
-            <button 
-              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
+            <button
+              onClick={() =>
+                document
+                  .getElementById('contact')
+                  ?.scrollIntoView({ behavior: 'smooth' })
+              }
               className="inline-flex items-center gap-3 px-8 py-3 bg-white/5 border border-white/10 hover:border-blue-500/50 hover:bg-blue-500/10 rounded-xl font-bold text-sm transition-all text-white group"
             >
               Get In Touch
