@@ -85,13 +85,14 @@ const Hero: React.FC = () => {
             <span className="relative z-10">Explore Projects</span>
             <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
           </button>
-          <button 
-            onClick={() => window.print()}
-            className="px-10 py-4 bg-transparent border border-white/10 hover:border-blue-500/50 hover:bg-blue-600/5 text-white font-bold rounded-xl transition-all hover:-translate-y-1 active:scale-95 flex items-center gap-3 min-w-[200px] justify-center"
+          <a 
+            href="/Jay_Kuwar_Resume.pdf"
+            download="Jay_Kuwar_Resume.pdf"
+            className="px-10 py-4 bg-transparent border border-white/10 hover:border-blue-500/50 hover:bg-blue-600/5 text-white font-bold rounded-xl transition-all hover:-translate-y-1 active:scale-95 flex items-center gap-3 min-w-[200px] justify-center no-underline"
           >
             <i className="fa-solid fa-file-pdf text-blue-500"></i>
             Download Resume
-          </button>
+          </a>
         </div>
 
         <div ref={statsRef} className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-16 pt-12 border-t border-white/5">

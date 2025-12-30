@@ -1,7 +1,8 @@
-
 import React from 'react';
 import { createRoot } from 'react-dom/client';
 import App from './App';
+
+console.log("Jay Kuwar Portfolio: Initializing Application...");
 
 const container = document.getElementById('root');
 if (container) {
@@ -12,5 +13,5 @@ if (container) {
     </React.StrictMode>
   );
 } else {
-  console.error("Root element not found");
+  console.error("Critical Error: Root element '#root' not found in document.");
 }

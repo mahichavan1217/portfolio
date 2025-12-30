@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -34,7 +33,6 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       className="group bg-engineer-card rounded-2xl overflow-hidden border border-white/5 hover:border-blue-500/30 hover:shadow-[0_0_30px_rgba(59,130,246,0.1)] transition-all duration-500 flex flex-col h-full"
     >
       <div className="relative h-48 overflow-hidden bg-white/5">
-        {/* Shimmer/Placeholder Effect */}
         {!isLoaded && (
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent animate-[shimmer_2s_infinite] -translate-x-full"></div>
         )}
@@ -58,6 +56,13 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold mb-3 group-hover:text-blue-400 transition-colors">{project.title}</h3>
         
+        {project.role && (
+          <div className="mb-4">
+            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">My Role</h4>
+            <p className="text-slate-200 text-xs font-semibold">{project.role}</p>
+          </div>
+        )}
+
         <div className="space-y-4 text-sm">
           <div>
             <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Objective</h4>
@@ -65,12 +70,12 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           </div>
           
           <div>
-            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Methodology</h4>
+            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Process</h4>
             <p className="text-slate-400 font-light leading-relaxed line-clamp-2">{project.methodology}</p>
           </div>
 
           <div>
-            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Technical Challenges & Solutions</h4>
+            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Analysis & Impact</h4>
             <p className={`text-slate-400 font-light leading-relaxed transition-all duration-300 ${showFull ? '' : 'line-clamp-3'}`}>
               {project.detailedDescription}
             </p>
@@ -78,7 +83,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
               onClick={() => setShowFull(!showFull)}
               className="mt-2 text-[10px] font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-widest"
             >
-              {showFull ? 'Show Less' : 'Read Full Analysis'}
+              {showFull ? 'Show Less' : 'Read Detail'}
             </button>
           </div>
 
@@ -101,7 +106,7 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 };
 
 const Projects: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'FEA/RBD' | 'CFD'>('FEA/RBD');
+  const [activeTab, setActiveTab] = useState<'Design & Development' | 'Simulations (FEA/CFD)'>('Design & Development');
 
   const filteredProjects = PROJECTS.filter(p => p.category === activeTab);
 
@@ -109,22 +114,22 @@ const Projects: React.FC = () => {
     <section id="projects" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
       <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
         <div>
-          <h2 className="text-xs font-mono text-blue-500 uppercase tracking-[0.3em] mb-4">Simulation Portfolio</h2>
-          <h3 className="text-4xl md:text-6xl font-black">Case Studies</h3>
+          <h2 className="text-xs font-mono text-blue-500 uppercase tracking-[0.3em] mb-4">Engineering Portfolio</h2>
+          <h3 className="text-4xl md:text-6xl font-black">Project Case Studies</h3>
         </div>
         
         <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
           <button 
-            onClick={() => setActiveTab('FEA/RBD')}
-            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'FEA/RBD' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
+            onClick={() => setActiveTab('Design & Development')}
+            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'Design & Development' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
           >
-            FEA / RBD
+            Design
           </button>
           <button 
-            onClick={() => setActiveTab('CFD')}
-            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'CFD' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
+            onClick={() => setActiveTab('Simulations (FEA/CFD)')}
+            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'Simulations (FEA/CFD)' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
           >
-            CFD Analysis
+            Simulations
           </button>
         </div>
       </div>

@@ -1,8 +1,7 @@
-
 export interface Project {
   id: string;
   title: string;
-  category: 'FEA/RBD' | 'CFD';
+  category: 'Design & Development' | 'Simulations (FEA/CFD)';
   description: string;
   detailedDescription: string;
   objective: string;
@@ -10,12 +9,13 @@ export interface Project {
   results: string;
   image: string;
   tools: string[];
+  role?: string;
 }
 
 export interface Skill {
   name: string;
   level: number;
-  category: 'Simulation' | 'Design' | 'Computation';
+  category: 'Software Tools' | 'Engineering Skills' | 'Soft Skills';
 }
 
 export interface Certification {

@@ -1,4 +1,3 @@
-
 import React from 'react';
 
 const About: React.FC = () => {
@@ -29,12 +28,12 @@ const About: React.FC = () => {
 
         <div className="space-y-6">
           <h2 className="text-xs font-mono text-blue-500 uppercase tracking-[0.3em]">Biography</h2>
-          <h3 className="text-4xl md:text-5xl font-black leading-tight">Solving Problems with <span className="text-blue-500">Physics & Math</span>.</h3>
+          <h3 className="text-4xl md:text-5xl font-black leading-tight">Aspiring Mechanical Engineer with <span className="text-blue-500">Precision Focus</span>.</h3>
           <p className="text-lg text-slate-400 font-light leading-relaxed">
-            I am a Mechanical Engineer currently pursuing my Bachelor of Engineering from Pune Vidyarthi Griha’s College of Engineering and Shrikrushna S. Dhamankar Institute of Management, Nashik.
+            I am Jay Kuwar, currently pursuing Bachelor of Engineering at Pune Vidyarthi Griha’s College of Engineering, Nashik. I specialize in CAD design and computational simulation.
           </p>
           <p className="text-slate-500 leading-relaxed">
-            With hands-on experience in CAD and simulation tools such as PTC Creo, SolidWorks, and ANSYS, I focus on delivering efficient engineering solutions. My passion lies in precision design, teamwork, and computational validation of mechanical systems.
+            With hands-on experience in tools like Creo, SolidWorks, and ANSYS, I am passionate about delivering efficient engineering solutions. My background includes leadership roles in projects like SAE TIFAN and multiple professional internships at leading CAD centers.
           </p>
           <div className="space-y-4 pt-4">
             <div className="flex items-start gap-4">
@@ -42,8 +41,9 @@ const About: React.FC = () => {
                     <i className="fa-solid fa-graduation-cap"></i>
                 </div>
                 <div>
-                    <h4 className="font-bold text-slate-200">Pune Vidyarthi Griha's COE, Nashik</h4>
-                    <p className="text-sm text-slate-500">Mechanical Engineering | 2022 - 2026 (Exp.)</p>
+                    <h4 className="font-bold text-slate-200">Bachelor of Engineering (B.E)</h4>
+                    <p className="text-sm text-slate-500">Pune Vidyarthi Griha’s COE, Nashik | CGPA: 8.07</p>
+                    <p className="text-[10px] text-slate-600 uppercase font-mono mt-1">2022 - June 2026</p>
                 </div>
             </div>
             <div className="flex items-start gap-4">
@@ -51,8 +51,9 @@ const About: React.FC = () => {
                     <i className="fa-solid fa-briefcase"></i>
                 </div>
                 <div>
-                    <h4 className="font-bold text-slate-200">Professional Internships</h4>
-                    <p className="text-sm text-slate-500">Access CADD | ARK Infosolutions | CAD CAM GURU</p>
+                    <h4 className="font-bold text-slate-200">Internship Experience</h4>
+                    <p className="text-sm text-slate-500">Access CADD, Nashik | ARK Infosolutions | CAD CAM GURU</p>
+                    <p className="text-[10px] text-slate-600 uppercase font-mono mt-1">2024 - 2025 Experience</p>
                 </div>
             </div>
           </div>

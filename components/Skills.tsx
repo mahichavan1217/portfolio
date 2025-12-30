@@ -30,7 +30,8 @@ const Skills: React.FC = () => {
     }
   }, []);
 
-  const categories = ['Simulation', 'Design', 'Computation'] as const;
+  // Fix: Updated categories to match the 'category' property in the Skill interface and the SKILLS constant
+  const categories = ['Software Tools', 'Engineering Skills', 'Soft Skills'] as const;
 
   return (
     <section id="skills" ref={sectionRef} className="py-24 px-6 md:px-12 bg-engineer-card/30 backdrop-blur-sm">

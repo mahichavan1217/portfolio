@@ -41,12 +41,6 @@ const Navbar: React.FC = () => {
     }
   };
 
-  const handleDownloadResume = (e: React.MouseEvent) => {
-    e.preventDefault();
-    // Simulate high-quality PDF generation/download via browser print
-    window.print();
-  };
-
   return (
     <nav 
       ref={navRef}
@@ -89,13 +83,14 @@ const Navbar: React.FC = () => {
           >
             <i className="fa-brands fa-linkedin"></i>
           </a>
-          <button 
-            onClick={handleDownloadResume}
-            className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-full transition-all duration-300 shadow-lg shadow-blue-600/20 flex items-center gap-2 active:scale-95"
+          <a 
+            href="/Jay_Kuwar_Resume.pdf"
+            download="Jay_Kuwar_Resume.pdf"
+            className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-full transition-all duration-300 shadow-lg shadow-blue-600/20 flex items-center gap-2 active:scale-95 no-underline"
           >
             <i className="fa-solid fa-download text-xs"></i>
             Resume
-          </button>
+          </a>
         </div>
       </div>
 
@@ -122,13 +117,14 @@ const Navbar: React.FC = () => {
           </button>
         ))}
         <div className="flex flex-col items-center gap-6 mt-4 w-full px-12">
-          <button 
-            onClick={handleDownloadResume}
-            className="w-full py-4 bg-blue-600 text-white font-bold rounded-2xl flex items-center justify-center gap-3 shadow-xl"
+          <a 
+            href="/Jay_Kuwar_Resume.pdf"
+            download="Jay_Kuwar_Resume.pdf"
+            className="w-full py-4 bg-blue-600 text-white font-bold rounded-2xl flex items-center justify-center gap-3 shadow-xl no-underline"
           >
             <i className="fa-solid fa-download"></i>
             Resume
-          </button>
+          </a>
           <div className="flex gap-8 text-2xl">
             <a href="https://linkedin.com/in/jay-kuwar" target="_blank" rel="noopener noreferrer" className="text-slate-400"><i className="fa-brands fa-linkedin"></i></a>
             <a href="mailto:jaykuwar310@gmail.com" className="text-slate-400"><i className="fa-solid fa-envelope"></i></a>

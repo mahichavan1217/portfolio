@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 
 const Contact: React.FC = () => {
@@ -35,38 +34,40 @@ const Contact: React.FC = () => {
           <div>
             <h2 className="text-xs font-mono text-blue-500 uppercase tracking-[0.3em] mb-4">Contact Me</h2>
             <h3 className="text-4xl md:text-5xl font-black mb-6">Let's connect for engineering innovation.</h3>
-            <p className="text-slate-400 mb-12 max-w-md font-light">
+            <p className="text-slate-400 mb-8 max-w-md font-light">
               I'm open to opportunities in CAD Design, Simulation, and Industrial Manufacturing.
             </p>
 
-            <div className="space-y-6 mb-12">
-              <a href="mailto:jaykuwar310@gmail.com" className="flex items-center gap-4 group cursor-pointer">
+            <div className="space-y-6 mb-10">
+              <a href="mailto:jaykuwar310@gmail.com" className="flex items-center gap-4 group cursor-pointer no-underline">
                 <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xl text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
                   <i className="fa-solid fa-envelope"></i>
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 uppercase font-mono">Email</div>
-                  <div className="text-lg font-bold">jaykuwar310@gmail.com</div>
+                  <div className="text-lg font-bold text-white">jaykuwar310@gmail.com</div>
                 </div>
               </a>
-              <a href="tel:+918055361505" className="flex items-center gap-4 group cursor-pointer">
+              <a href="tel:+918055361505" className="flex items-center gap-4 group cursor-pointer no-underline">
                 <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xl text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
                   <i className="fa-solid fa-phone"></i>
                 </div>
                 <div>
                   <div className="text-xs text-slate-500 uppercase font-mono">Phone</div>
-                  <div className="text-lg font-bold">+91 8055361505</div>
+                  <div className="text-lg font-bold text-white">+91 8055361505</div>
                 </div>
               </a>
-              <div className="flex items-center gap-4 group cursor-pointer" onClick={() => window.print()}>
-                <div className="w-12 h-12 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-xl text-blue-500 group-hover:bg-blue-600 group-hover:text-white transition-all">
-                  <i className="fa-solid fa-file-pdf"></i>
-                </div>
-                <div>
-                  <div className="text-xs text-slate-500 uppercase font-mono">Documents</div>
-                  <div className="text-lg font-bold underline decoration-blue-500/30">Download Full CV</div>
-                </div>
-              </div>
+            </div>
+
+            <div className="mb-12">
+              <a 
+                href="/Jay_Kuwar_Resume.pdf" 
+                download="Jay_Kuwar_Resume.pdf"
+                className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-blue-500/30 hover:border-blue-500 hover:bg-blue-600/10 text-white font-bold rounded-xl transition-all active:scale-95 no-underline group shadow-lg shadow-blue-500/5"
+              >
+                <i className="fa-solid fa-file-pdf text-blue-500 group-hover:scale-110 transition-transform"></i>
+                Download Full Resume (PDF)
+              </a>
             </div>
 
             <div className="flex gap-4">
@@ -101,7 +102,7 @@ const Contact: React.FC = () => {
                       value={formData.name}
                       onChange={handleChange}
                       type="text" 
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all text-white" 
                       placeholder="John Doe" 
                     />
                   </div>
@@ -113,7 +114,7 @@ const Contact: React.FC = () => {
                       value={formData.subject}
                       onChange={handleChange}
                       type="text" 
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all" 
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all text-white" 
                       placeholder="Project Inquiry" 
                     />
                   </div>
@@ -126,7 +127,7 @@ const Contact: React.FC = () => {
                     value={formData.email}
                     onChange={handleChange}
                     type="email" 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all" 
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all text-white" 
                     placeholder="john@company.com" 
                   />
                 </div>
@@ -138,7 +139,7 @@ const Contact: React.FC = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows={5} 
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all resize-none" 
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 focus:outline-none focus:border-blue-500 transition-all resize-none text-white" 
                     placeholder="Describe your engineering needs..."
                   ></textarea>
                 </div>

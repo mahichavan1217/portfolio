@@ -1,4 +1,3 @@
-
 import React, { useState, useRef, useEffect } from 'react';
 import { GoogleGenAI } from "@google/genai";
 
@@ -22,14 +21,23 @@ const AIAssistant: React.FC = () => {
   const handleSend = async () => {
     if (!input.trim() || isLoading) return;
 
+    const apiKey = process.env.API_KEY;
+    if (!apiKey) {
+      setMessages(prev => [...prev, 
+        { role: 'user', text: input },
+        { role: 'ai', text: "System Error: AI API Key is not configured correctly in deployment settings. Please ensure API_KEY is set in Vercel." }
+      ]);
+      setInput('');
+      return;
+    }
+
     const userMessage = input;
     setInput('');
     setMessages(prev => [...prev, { role: 'user', text: userMessage }]);
     setIsLoading(true);
 
     try {
-      // Accessing API_KEY directly as required by system instructions
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY as string });
+      const ai = new GoogleGenAI({ apiKey });
       const response = await ai.models.generateContent({
         model: 'gemini-3-flash-preview',
         contents: userMessage,
@@ -48,7 +56,7 @@ const AIAssistant: React.FC = () => {
       setMessages(prev => [...prev, { role: 'ai', text }]);
     } catch (error: any) {
       console.error("AI Error:", error);
-      setMessages(prev => [...prev, { role: 'ai', text: "I'm having trouble accessing the mainframe. Please check your connection or API key configuration." }]);
+      setMessages(prev => [...prev, { role: 'ai', text: "I'm having trouble processing that request right now. Please try again later." }]);
     } finally {
       setIsLoading(false);
     }
@@ -70,7 +78,7 @@ const AIAssistant: React.FC = () => {
                 </div>
               </div>
             </div>
-            <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white p-1">
+            <button onClick={() => setIsOpen(false)} className="text-white/80 hover:text-white p-1" aria-label="Close Chat">
               <i className="fa-solid fa-xmark"></i>
             </button>
           </div>
@@ -115,6 +123,7 @@ const AIAssistant: React.FC = () => {
                 onClick={handleSend}
                 disabled={isLoading}
                 className="bg-blue-600 hover:bg-blue-500 w-11 h-11 rounded-xl flex items-center justify-center text-white disabled:opacity-50 transition-all active:scale-95 shadow-lg shadow-blue-600/20"
+                aria-label="Send Message"
               >
                 <i className="fa-solid fa-paper-plane text-xs"></i>
               </button>
@@ -126,6 +135,7 @@ const AIAssistant: React.FC = () => {
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-16 h-16 bg-blue-600 hover:bg-blue-500 text-white rounded-full shadow-[0_0_30px_rgba(37,99,235,0.5)] flex items-center justify-center text-2xl transition-all hover:scale-110 active:scale-95 group relative"
+        aria-label="Toggle AI Assistant"
       >
         <span className="absolute -top-1 -right-1 w-4 h-4 bg-emerald-500 rounded-full border-2 border-engineer-dark"></span>
         {isOpen ? <i className="fa-solid fa-chevron-down"></i> : <i className="fa-solid fa-robot"></i>}
