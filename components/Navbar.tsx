@@ -85,10 +85,11 @@ const Navbar: React.FC = () => {
           </a>
           <a 
             href={RESUME_URL}
-            download="Jay_Kuwar_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="px-6 py-2.5 bg-blue-600 hover:bg-blue-500 text-white text-sm font-bold rounded-full transition-all duration-300 shadow-lg shadow-blue-600/20 flex items-center gap-2 active:scale-95 no-underline"
           >
-            <i className="fa-solid fa-download text-xs"></i>
+            <i className="fa-solid fa-file-pdf text-xs"></i>
             Resume
           </a>
         </div>
@@ -119,10 +120,11 @@ const Navbar: React.FC = () => {
         <div className="flex flex-col items-center gap-6 mt-4 w-full px-12">
           <a 
             href={RESUME_URL}
-            download="Jay_Kuwar_Resume.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
             className="w-full py-4 bg-blue-600 text-white font-bold rounded-2xl flex items-center justify-center gap-3 shadow-xl no-underline"
           >
-            <i className="fa-solid fa-download"></i>
+            <i className="fa-solid fa-file-pdf"></i>
             Resume
           </a>
           <div className="flex gap-8 text-2xl">
