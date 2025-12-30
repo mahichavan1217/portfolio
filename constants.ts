@@ -1,5 +1,8 @@
 import { Project, Skill, Certification } from './types';
 
+// Tip: Replace this with your Google Drive or LinkedIn link if you don't want to host the file locally.
+export const RESUME_URL = "/Jay_Kuwar_Resume.pdf"; 
+
 export const PROJECTS: Project[] = [
   {
     id: 'tifan-2025',

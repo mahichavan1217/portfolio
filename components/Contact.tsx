@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { RESUME_URL } from '../constants';
 
 const Contact: React.FC = () => {
   const [formState, setFormState] = useState<'idle' | 'sending' | 'success'>('idle');
@@ -61,7 +62,7 @@ const Contact: React.FC = () => {
 
             <div className="mb-12">
               <a 
-                href="/Jay_Kuwar_Resume.pdf" 
+                href={RESUME_URL} 
                 download="Jay_Kuwar_Resume.pdf"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-blue-500/30 hover:border-blue-500 hover:bg-blue-600/10 text-white font-bold rounded-xl transition-all active:scale-95 no-underline group shadow-lg shadow-blue-500/5"
               >

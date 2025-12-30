@@ -1,6 +1,6 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 import { gsap } from 'gsap';
+import { RESUME_URL } from '../constants';
 
 const Hero: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -86,7 +86,7 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-blue-600 translate-y-full group-hover:translate-y-0 transition-transform duration-300"></div>
           </button>
           <a 
-            href="/Jay_Kuwar_Resume.pdf"
+            href={RESUME_URL}
             download="Jay_Kuwar_Resume.pdf"
             className="px-10 py-4 bg-transparent border border-white/10 hover:border-blue-500/50 hover:bg-blue-600/5 text-white font-bold rounded-xl transition-all hover:-translate-y-1 active:scale-95 flex items-center gap-3 min-w-[200px] justify-center no-underline"
           >
