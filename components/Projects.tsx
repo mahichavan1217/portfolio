@@ -15,16 +15,19 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
     const el = cardRef.current;
     if (!el) return;
 
-    gsap.from(el, {
-      opacity: 0,
-      y: 30,
-      duration: 0.6,
-      scrollTrigger: {
-        trigger: el,
-        start: 'top 90%',
-        toggleActions: 'play none none reverse'
+    gsap.fromTo(el, 
+      { opacity: 0, y: 30 },
+      {
+        opacity: 1,
+        y: 0,
+        duration: 0.6,
+        scrollTrigger: {
+          trigger: el,
+          start: 'top 90%',
+          toggleActions: 'play none none reverse'
+        }
       }
-    });
+    );
   }, [project]);
 
   return (
@@ -70,26 +73,26 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
           </div>
           
           <div>
-            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Process</h4>
+            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Methodology</h4>
             <p className="text-slate-400 font-light leading-relaxed line-clamp-2">{project.methodology}</p>
           </div>
 
           <div>
-            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Analysis & Impact</h4>
-            <p className={`text-slate-400 font-light leading-relaxed transition-all duration-300 ${showFull ? '' : 'line-clamp-3'}`}>
+            <h4 className="text-[10px] font-mono text-blue-500 uppercase tracking-widest mb-1">Impact & Details</h4>
+            <p className={`text-slate-400 font-light leading-relaxed transition-all duration-300 ${showFull ? '' : 'line-clamp-2'}`}>
               {project.detailedDescription}
             </p>
             <button 
               onClick={() => setShowFull(!showFull)}
-              className="mt-2 text-[10px] font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-widest"
+              className="mt-1 text-[10px] font-bold text-blue-400 hover:text-blue-300 transition-colors uppercase tracking-widest"
             >
-              {showFull ? 'Show Less' : 'Read Detail'}
+              {showFull ? 'Show Less' : 'View Full Case Study'}
             </button>
           </div>
 
           <div className="pt-2 border-t border-white/5">
             <h4 className="text-[10px] font-mono text-emerald-500 uppercase tracking-widest mb-1">Key Results</h4>
-            <p className="text-emerald-500/80 italic leading-relaxed">{project.results}</p>
+            <p className="text-emerald-500/80 italic leading-relaxed text-xs">{project.results}</p>
           </div>
         </div>
 
@@ -106,35 +109,38 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 };
 
 const Projects: React.FC = () => {
-  const [activeTab, setActiveTab] = useState<'Design & Development' | 'Simulations (FEA/CFD)'>('Design & Development');
+  const [activeTab, setActiveTab] = useState<'Design & Development' | 'FEA / RBD' | 'CFD'>('Design & Development');
 
   const filteredProjects = PROJECTS.filter(p => p.category === activeTab);
 
+  const tabs = [
+    { id: 'Design & Development', label: 'CAD Design' },
+    { id: 'FEA / RBD', label: 'FEA / RBD' },
+    { id: 'CFD', label: 'CFD Simulations' }
+  ] as const;
+
   return (
     <section id="projects" className="py-24 px-6 md:px-12 max-w-7xl mx-auto">
-      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-6">
+      <div className="flex flex-col md:flex-row md:items-end justify-between mb-16 gap-8">
         <div>
           <h2 className="text-xs font-mono text-blue-500 uppercase tracking-[0.3em] mb-4">Engineering Portfolio</h2>
           <h3 className="text-4xl md:text-6xl font-black">Project Case Studies</h3>
         </div>
         
-        <div className="flex bg-white/5 p-1 rounded-xl border border-white/10">
-          <button 
-            onClick={() => setActiveTab('Design & Development')}
-            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'Design & Development' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
-          >
-            Design
-          </button>
-          <button 
-            onClick={() => setActiveTab('Simulations (FEA/CFD)')}
-            className={`px-6 py-2 rounded-lg text-sm font-bold transition-all ${activeTab === 'Simulations (FEA/CFD)' ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
-          >
-            Simulations
-          </button>
+        <div className="flex bg-white/5 p-1 rounded-xl border border-white/10 self-start md:self-auto overflow-x-auto max-w-full">
+          {tabs.map((tab) => (
+            <button 
+              key={tab.id}
+              onClick={() => setActiveTab(tab.id)}
+              className={`px-6 py-2 rounded-lg text-xs md:text-sm font-bold transition-all whitespace-nowrap ${activeTab === tab.id ? 'bg-blue-600 text-white shadow-lg' : 'text-slate-500 hover:text-slate-300'}`}
+            >
+              {tab.label}
+            </button>
+          ))}
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 min-h-[400px]">
         {filteredProjects.map((project) => (
           <ProjectCard key={project.id} project={project} />
         ))}

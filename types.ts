@@ -1,7 +1,7 @@
 export interface Project {
   id: string;
   title: string;
-  category: 'Design & Development' | 'Simulations (FEA/CFD)';
+  category: 'Design & Development' | 'FEA / RBD' | 'CFD';
   description: string;
   detailedDescription: string;
   objective: string;

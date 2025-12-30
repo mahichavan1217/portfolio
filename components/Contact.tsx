@@ -63,7 +63,8 @@ const Contact: React.FC = () => {
             <div className="mb-12">
               <a 
                 href={RESUME_URL} 
-                download="Jay_Kuwar_Resume.pdf"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-flex items-center gap-3 px-8 py-4 bg-transparent border border-blue-500/30 hover:border-blue-500 hover:bg-blue-600/10 text-white font-bold rounded-xl transition-all active:scale-95 no-underline group shadow-lg shadow-blue-500/5"
               >
                 <i className="fa-solid fa-file-pdf text-blue-500 group-hover:scale-110 transition-transform"></i>
