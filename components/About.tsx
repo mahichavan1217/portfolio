@@ -32,7 +32,7 @@ const About: React.FC = () => {
                 src={hasError ? fallbackPath : portraitImagePath} 
                 alt="Jay Kuwar Portrait" 
                 className={`w-full h-full object-cover transition-all duration-1000 ${
-                  isLoaded ? 'opacity-100 scale-100' : 'opacity-0 scale-105'
+                  isLoaded ? 'opacity-100 scale-100' : 'opacity-100 scale-100'
                 } grayscale brightness-90 group-hover:grayscale-0 group-hover:brightness-100 group-hover:scale-105`}
                 onLoad={() => setIsLoaded(true)}
                 onError={() => {
@@ -45,7 +45,7 @@ const About: React.FC = () => {
               <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-blue-500/50 to-transparent animate-[scan_3s_linear_infinite] pointer-events-none opacity-0 group-hover:opacity-100"></div>
               
               {!isLoaded && (
-                <div className="absolute inset-0 flex items-center justify-center">
+                <div className="absolute inset-0 flex items-center justify-center bg-[#0f1115]/50">
                   <i className="fa-solid fa-gear animate-spin text-blue-500 text-3xl"></i>
                 </div>
               )}
