@@ -104,22 +104,58 @@ const About: React.FC = () => {
                 <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-all">
                   <i className="fa-solid fa-graduation-cap"></i>
                 </div>
-                <h4 className="font-bold text-slate-200 mb-1">Education</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-mono">
-                  PVG's COE, Nashik<br/>
-                  2022 - 2026 (Exp.)
-                </p>
+                <h4 className="font-bold text-slate-200 mb-4 text-lg">Academic Journey</h4>
+                
+                <div className="space-y-3 relative">
+                  {/* Timeline Line */}
+                  <div className="absolute left-2 top-0 bottom-0 w-[1px] bg-white/10 group-hover:bg-blue-500/20 transition-colors"></div>
+                  
+                  {/* B.E. Mechanical */}
+                  <div className="relative pl-6">
+                    <div className="absolute left-0 top-1.5 w-3 h-3 -ml-1.5 rounded-full bg-blue-600 border-3 border-[#0f1115] z-10"></div>
+                    <div className="text-[11px] text-blue-400 font-mono font-bold uppercase tracking-widest">B.E. MECHANICAL (8.07 CGPA)</div>
+                    <div className="text-[9px] text-slate-500 uppercase tracking-tighter">PVG'S COE, NASHIK | 2022 - 2026</div>
+                  </div>
+                  
+                  {/* HSC */}
+                  <div className="relative pl-6">
+                    <div className="absolute left-0 top-1.5 w-3 h-3 -ml-1.5 rounded-full bg-blue-500 border-3 border-[#0f1115] z-10"></div>
+                    <div className="text-[11px] text-blue-400 font-mono font-bold uppercase tracking-widest">HSC - CLASS 12 (80.14%)</div>
+                    <div className="text-[9px] text-slate-500 uppercase tracking-tighter">JANTA VIDYALAYA ABHONA | 2022</div>
+                  </div>
+                  
+                  {/* SSC */}
+                  <div className="relative pl-6">
+                    <div className="absolute left-0 top-1.5 w-3 h-3 -ml-1.5 rounded-full bg-blue-500 border-3 border-[#0f1115] z-10"></div>
+                    <div className="text-[11px] text-blue-400 font-mono font-bold uppercase tracking-widest">SSC - CLASS 10 (85.40%)</div>
+                    <div className="text-[9px] text-slate-500 uppercase tracking-tighter">JANTA VIDYALAYA ABHONA | 2020</div>
+                  </div>
+                </div>
               </div>
 
               <div className="p-6 rounded-2xl bg-white/5 border border-white/5 hover:border-blue-500/20 transition-all group">
                 <div className="w-10 h-10 rounded-xl bg-blue-500/10 flex items-center justify-center text-blue-500 mb-4 group-hover:bg-blue-500 group-hover:text-white transition-all">
                   <i className="fa-solid fa-industry"></i>
                 </div>
-                <h4 className="font-bold text-slate-200 mb-1">Experience</h4>
-                <p className="text-xs text-slate-500 leading-relaxed font-mono">
-                  ANSYS & CAD Training<br/>
-                  ARK Infosolutions / VCADD
-                </p>
+                <h4 className="font-bold text-slate-200 mb-4 text-lg">Training History</h4>
+                
+                <div className="space-y-3">
+                  <div>
+                    <div className="text-[11px] text-emerald-400 font-mono font-bold uppercase tracking-widest">ANSYS SPECIALIST</div>
+                    <div className="text-[9px] text-slate-500 uppercase tracking-tighter">ARK INFOSOLUTIONS | VCADD</div>
+                  </div>
+                  <div>
+                    <div className="text-[11px] text-emerald-400 font-mono font-bold uppercase tracking-widest">CAD/CAM EXPERT</div>
+                    <div className="text-[9px] text-slate-500 uppercase tracking-tighter">ACCESS CADD | CADCAM GURU</div>
+                  </div>
+                </div>
+                
+                <div className="mt-6 pt-4 border-t border-white/5">
+                   <div className="flex gap-1">
+                      {[1,2,3,4,5].map(i => <div key={i} className="h-1 flex-grow bg-blue-500/20 rounded-full group-hover:bg-blue-500 transition-all" style={{transitionDelay: `${i*100}ms`}}></div>)}
+                   </div>
+                   <div className="text-[8px] text-slate-600 font-mono uppercase tracking-[0.2em] mt-2">PROFESSIONAL SKILL INDEX</div>
+                </div>
               </div>
             </div>
             

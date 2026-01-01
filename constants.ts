@@ -1,9 +1,10 @@
+
 import { Project, Skill, Certification } from './types';
 
 export const RESUME_URL = "https://drive.google.com/file/d/1tzKSsdIHlCpepPERjnHq3kuITV7_GzwP/view?usp=sharing"; 
 
 export const PROJECTS: Project[] = [
-  // --- DESIGN & DEVELOPMENT ---
+  // --- DESIGN & DEVELOPMENT (CAD Projects) ---
   {
     id: 'tifan-2025',
     title: 'SAE TIFAN 2025 - Automatic Vegetable Transplanter',
@@ -18,6 +19,66 @@ export const PROJECTS: Project[] = [
     tools: ['PTC Creo', 'SolidWorks', 'Mechanism Design', 'Manufacturing']
   },
   {
+    id: 'knuckle-joint-design',
+    title: 'Design of Knuckle Joint Assembly',
+    category: 'Design & Development',
+    description: 'Detailed parametric modeling and drafting of a heavy-duty knuckle joint.',
+    detailedDescription: 'Engineered a robust knuckle joint assembly for connecting two rods under tensile loading. Focused on optimized pin clearance and fork-end geometry to ensure smooth pivoting while maintaining structural integrity.',
+    objective: 'Create a standardized, high-reliability mechanical link for axial load transmission.',
+    methodology: 'Developed 3D parametric models in SolidWorks. Generated comprehensive 2D manufacturing drawings in AutoCAD, including GD&T callouts for the pin and eye-end interfaces.',
+    results: 'Completed a full set of manufacturing-ready blueprints with precise tolerance stacking analysis.',
+    image: 'https://images.unsplash.com/photo-1537462715879-360eeb61a0ad?auto=format&fit=crop&q=80&w=800',
+    tools: ['SolidWorks', 'AutoCAD', 'Mechanical Drafting']
+  },
+  {
+    id: 'cotter-joint-design',
+    title: 'Design of Cotter Joint',
+    category: 'Design & Development',
+    description: 'Precision design of a socket-and-spigot cotter joint for rigid axial connections.',
+    detailedDescription: 'Designed a standardized cotter joint used for connecting reciprocating parts. Calculated optimal taper angles for the cotter to ensure self-locking properties and ease of assembly/disassembly.',
+    objective: 'Design a joint capable of withstanding significant axial compressive and tensile forces.',
+    methodology: 'Utilized PTC Creo for 3D modeling and assembly. Performed geometric validation to ensure proper interference fits and clearances between the socket, spigot, and cotter.',
+    results: 'Validated the design for standard industrial applications with a focus on ease of maintenance.',
+    image: 'https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?auto=format&fit=crop&q=80&w=800',
+    tools: ['PTC Creo', 'Machine Design', 'Engineering Drawing']
+  },
+  {
+    id: 'gripper-mechanism',
+    title: 'Design of Gripper Mechanism',
+    category: 'Design & Development',
+    description: 'Kinematic design and 3D modeling of a robotic parallel gripper.',
+    detailedDescription: 'Developed a mechanical gripper mechanism utilizing a rack-and-pinion drive. Optimized the link lengths to achieve a specific stroke range and parallel jaw movement for precise handling.',
+    objective: 'Design an efficient end-effector for pick-and-place automation systems.',
+    methodology: 'Modeled using SolidWorks with a focus on kinematic constraints. Analyzed the gear mesh and linkage movement to eliminate potential jamming.',
+    results: 'Developed a compact, modular gripper design ready for rapid prototyping and actuator integration.',
+    image: 'https://images.unsplash.com/photo-1531746790731-6c307f87730d?auto=format&fit=crop&q=80&w=800',
+    tools: ['SolidWorks', 'Mechanism Synthesis', 'Robotics Design']
+  },
+  {
+    id: 'butterfly-valve',
+    title: 'Assembly of Butterfly Valve',
+    category: 'Design & Development',
+    description: 'Complex assembly modeling and flow-path design of an industrial valve.',
+    detailedDescription: 'Modeled a complete industrial butterfly valve assembly, including the body, disc, stem, and actuator mounting. Ensured proper sealing interface design and material selection for high-pressure fluid control.',
+    objective: 'Create a high-fidelity 3D assembly for fluid simulation and manufacturing documentation.',
+    methodology: 'Utilized CATIA V5 for advanced surfacing of the valve disc. Managed the assembly hierarchy to allow for easy part replacements and maintenance simulations.',
+    results: 'Generated a full BOM (Bill of Materials) and exploded views for assembly line instructions.',
+    image: 'https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&q=80&w=800',
+    tools: ['CATIA V5', 'Assembly Design', 'Industrial Valves']
+  },
+  {
+    id: 'press-tool',
+    title: 'Assembly of Industrial Press Tool',
+    category: 'Design & Development',
+    description: 'Detailed modeling of a high-tonnage stamping press tool assembly.',
+    detailedDescription: 'Designed a multi-component press tool involving die blocks, punch holders, and guide pillars. Incorporated safety features and ejection mechanisms to facilitate high-speed production cycles.',
+    objective: 'To develop a rigid and precise tool assembly for industrial metal forming.',
+    methodology: 'Assembled in SolidWorks using top-down design techniques. Checked for interferences between moving components during the full stroke of the press.',
+    results: 'Completed a production-ready assembly with optimized tool life and reduced maintenance downtime.',
+    image: 'https://images.unsplash.com/photo-1504148455328-c39695715583?auto=format&fit=crop&q=80&w=800',
+    tools: ['SolidWorks', 'Tool & Die Design', 'Sheet Metal']
+  },
+  {
     id: 'mini-drill',
     title: 'Design & Fabrication of Mini Drill Machine',
     category: 'Design & Development',
@@ -26,7 +87,7 @@ export const PROJECTS: Project[] = [
     objective: 'Create a low-cost, high-efficiency vertical drill for small-scale precision work.',
     methodology: 'Detailed drafting in AutoCAD followed by 3D assembly in SolidWorks to check for interference. Fabricated components using lathe and milling operations with a tolerance of ±0.05mm.',
     results: 'Successfully drilled holes up to 6mm diameter in aluminum plates with high dimensional accuracy and minimal run-out.',
-    image: 'https://images.unsplash.com/photo-1504148455328-c39695715583?auto=format&fit=crop&q=80&w=800',
+    image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&q=80&w=800',
     tools: ['CAD Modeling', 'Fabrication', 'Mechanical Assembly']
   },
 

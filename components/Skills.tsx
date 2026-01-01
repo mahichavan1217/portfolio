@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -30,7 +29,6 @@ const Skills: React.FC = () => {
     }
   }, []);
 
-  // Fix: Updated categories to match the 'category' property in the Skill interface and the SKILLS constant
   const categories = ['Software Tools', 'Engineering Skills', 'Soft Skills'] as const;
 
   return (
@@ -66,29 +64,6 @@ const Skills: React.FC = () => {
               </div>
             </div>
           ))}
-        </div>
-
-        <div className="mt-20 p-8 rounded-2xl bg-white/5 border border-white/5 grid md:grid-cols-4 gap-8 items-center">
-            <div className="col-span-1 md:col-span-1">
-                <div className="text-blue-500 text-3xl mb-2"><i className="fa-solid fa-microchip"></i></div>
-                <h5 className="font-bold mb-1">High Performance Computing</h5>
-                <p className="text-xs text-slate-500 leading-relaxed">Experienced in scaling simulations across multi-node clusters.</p>
-            </div>
-            <div className="col-span-1 md:col-span-1">
-                <div className="text-blue-500 text-3xl mb-2"><i className="fa-solid fa-code-branch"></i></div>
-                <h5 className="font-bold mb-1">Automation (PyAnsys)</h5>
-                <p className="text-xs text-slate-500 leading-relaxed">Scripting complex workflows using Python and APDL.</p>
-            </div>
-            <div className="col-span-1 md:col-span-1">
-                <div className="text-blue-500 text-3xl mb-2"><i className="fa-solid fa-vial"></i></div>
-                <h5 className="font-bold mb-1">Testing & Validation</h5>
-                <p className="text-xs text-slate-500 leading-relaxed">Cross-referencing FEA results with strain gauge data.</p>
-            </div>
-            <div className="col-span-1 md:col-span-1">
-                <div className="text-blue-500 text-3xl mb-2"><i className="fa-solid fa-shield-halved"></i></div>
-                <h5 className="font-bold mb-1">Design Optimization</h5>
-                <p className="text-xs text-slate-500 leading-relaxed">Using topological optimization to minimize weight.</p>
-            </div>
         </div>
       </div>
     </section>
